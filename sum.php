@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>
-           webz 
+           web 
         </title>
     </head>
  
