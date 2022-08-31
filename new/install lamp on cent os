@@ -1,0 +1,96 @@
+
+sudo yum clean all
+sudo yum update
+
+
+1. Install Apache
+   
+sudo yum install httpd -y
+
+
+2. After that, activate your Apache server 
+
+sudo systemctl start httpd.service
+
+3.Install MySQL (MariaDB) Server
+
+sudo yum install mariadb-server mariadb -y
+
+
+4.start the MariaDB service
+
+sudo systemctl start mariadb
+
+5.Run MySQL Security Script
+
+sudo mysql_secure_installation
+
+
+6. Install PHP
+
+sudo yum install php php-mysql
+
+sudo systemctl restart httpd.service 
+
+7.Test PHP Processing
+
+1. To install the editor, use this command:
+sudo yum install nano
+2. Use a basic PHP script to make an info.php file, with the command:
+sudo nano /var/www/html/info.php
+3. This opens a blank text file in which you should copy and paste the following:
+<?php
+
+phpinfo ();
+
+?>
+
+4. Hold CTRL+X (to exit) and Y and Enter (to save changes, and close the file).
+5. Check whether PHP is working by visiting the following URL:
+http://ip_address/info.php
+
+6. If a firewall is enabled you will need to open a route for HTTP traffic. Use the command:
+sudo firewall-cmd --permanent --zone=public --add-service=http
+7.Following with the command to open it for HTTPS traffic:
+sudo firewall-cmd --permanent --zone=public --add-service=https
+8.Finally, restart the firewall to enable the new settings:
+sudo firewall-cmd --reload
+
+8. Install PHP Modules:
+yum install php-
+
+9.Restart Apache
+sudo systemctl restart httpd
+
+
+
+                     install php 7.4
+
+Step 1: Add EPEL and REMI Repository
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum -y install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+Step 2: Install PHP 7.4 on CentOS 7
+sudo yum -y install yum-utils
+sudo yum-config-manager --enable remi-php74
+sudo yum update
+sudo yum install php php-cli
+
+step 3: install additional packages
+sudo yum install php  php-cli php-fpm php-mysqlnd php-zip php-devel php-gd php-mcrypt php-mbstring php-curl php-xml php-pear php-bcmath php-json
+
+
+
+
+                      uninstall lamp
+php:
+php-sudo yum remove php-cli mod_php php-common
+
+mariadb:
+yum remove mariadb mariadb-server
+
+apache:
+yum remove "httpd*" -y
+
+
+

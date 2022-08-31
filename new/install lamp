@@ -1,0 +1,101 @@
+# Installing Apache and Updating the Firewall
+
+
+
+sudo apt update
+sudo apt install apache2
+sudo ufw app list
+sudo ufw app info "Apache Full"
+sudo ufw allow "Apache Full"
+sudo a2enmod rewrite
+sudo service apache2 restart
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+<Directory /var/www/html>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+</Directory>
+sudo service apache2 restart
+
+
+
+
+#Installing MySQL
+
+sudo apt install mysql-server
+
+##sudo mysql_secure_installation
+sudo mysql
+
+
+ ##Installing PHP
+
+ sudo apt install php libapache2-mod-php php-mysql
+
+ sudo nano /etc/apache2/mods-enabled/dir.conf
+
+ ##  <IfModule mod_dir.c>
+    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+</IfModule> 
+
+                        TO
+
+   <IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+  </IfModule>  ##
+
+
+
+sudo systemctl restart apache2
+
+sudo systemctl status apache2
+
+#Installing PHP Extensions 
+ sudo apt install php-imap php-mbstring php-mcrypt php-mysql php-redis php-xml php-zip php-gd php-curl php-cli php-json php-bcmath
+
+  
+
+#seting permission
+
+ sudo chown -R $USER:$USER /var/www/html
+
+#enable empty document
+
+touch ~/Templates/empty Document
+
+
+#install php myadmin
+
+sudo apt install phpmyadmin
+
+
+#restart  apache2
+
+sudo systemctl restart apache2
+
+
+#mysql config
+sudo mysql
+
+{inside mysql}
+
+##alter user 'root'@'localhost' identified with caching_sha2_password by 'admin#123'; 
+##ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin#123';
+##grant all privileges on *.* to 'root'@'localhost' with grant option;
+
+
+#restarting services
+sudo systemctl restart mysql
+sudo systemctl restart apache2
+
+
+
+
+
+
+
+
+
+
+

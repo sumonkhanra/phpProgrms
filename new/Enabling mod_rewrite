@@ -1,0 +1,28 @@
+# Enabling mod_rewrite
+
+
+sudo a2enmod rewrite
+
+sudo systemctl restart apache2
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+
+<VirtualHost *:80>
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    
+    . . .
+</VirtualHost>
+
+
+
+
+sudo systemctl restart apache2
+
+
+sudo nano /var/www/html/.htaccess
+
