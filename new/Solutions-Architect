@@ -1,0 +1,100 @@
+1.Ec2 (elastic compute cloude)
+
+             provide secure and reseieable compute capacity in cloude 
+
+             1.scaling (instances scaled up mor down
+             2.integrade with other service (s3,rds)
+             3.pay for what you use
+             4.instance can be launched in one or more regions and Az
+             5.suport for diffarent os
+             6.works with amazone VPC to provide secure network to resource
+          
+        
+2.Database
+             1.Amazon database services are – DynamoDB, RDS, RedShift, and ElastiCache
+
+             2.number of AWS RDS(Relational Database) engines, such as:
+               MySQL,Oracle,PostgreSQL,SQLServer,MariaDB,Amazon Aurora
+ 
+             3.features of Amazon Database:Easy to administer,Highly scalable,Durable and reliable
+               Faster performance,Highly available,More secure,Cost-effective
+
+             4.Amazon DynamoDB service is a NoSQL database and server-less, and delivers
+               consistent single-digit millisecond latency at any scale  
+
+             5.key value store Key- value store is a database service that facilitates the 
+               storing, updating, and querying of the objects which are generally identified
+               with the key and values. These objects consist of the keys and values which constitute
+               the actual content that is stored.
+
+             6.DynamoDB - *Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that require consistent 
+                           single-digit millisecond latency at any scale. 
+
+                          *It is a fully managed database that supports both document and key-value data models.  
+
+                          *Its flexible data model and performance makes it a great fit for mobile, web, gaming
+                            ad-tech, IOT, and many other applications. 
+
+                          *It is stored in SSD storage.
+
+                          *It is spread across three geographically data centres. 
+
+                          *DynamoDB supports two types of primary keys: Partition key and sort key.
+
+                          *DynamoDB supports two types of secondary indexes: Global secondary index and Local secondary index.
+
+                          *Local secondary index : An index that has the same partition key as the base table, but a different sort key.
+
+                          *A read capacity unit is a single consistent read per second for items no larger than 4KB.A write capacity unit is a
+                            single write per second for items no bigger than 1KB.
+
+                          *DynamoDB allows 20 attributes.
+
+             7.Benefits of using Amazon DynamoDB - *Being a self-managed service, DynamoDB doesn’t require the experts for setup,
+                                                     installation, cluster etc.
+                                                   *It provides inevitable and faster performance.
+                                                   *It is highly scalable, available, and durable.
+                                                   *It provides very high throughput at the low latency.
+                                                   *It is highly cost-effective.
+                                                   *It supports and allows the creation of dynamic tables with multi-values
+                                                     attributes i.e. it’s flexible in nature.
+
+             8.DynamoDB Mapper Class - The mapper class is the entry point of the DynamoDB.It allows users to enter the DynamoDB and
+                                       access the endpoint. DynamoDB mapper class helps users access the data stored in various tables,
+                                       then execute queries, scan them against the tables, and perform CRUD operations on the data items.
+
+
+           9.DynamoDB supports different types of data types such as collection data types, scalar data types, and even null values.
+
+           10.Scalar Data Types –  The scalar data types supported by DynamoDB are:*Binary *Number *Boolean *String
+         
+           11.Collection Data Types – The collection data types supported by DynamoDB are:*Binary Set *Number Set *String Set *Heterogeneous Map
+                                                                                          *Heterogeneous List
+
+           12.DynamoDB Auto Scaling specifies its specialized feature to automatically scale up and down its
+               own read and write capacity or global secondary index.
+
+           13. Amazon RDS-RDS stands for Relational Database Service by which a user can easily manage and scale a relational database
+                            in the cloud. You can focus on your application and business instead of managing the time-consuming data 
+                            administration works.The user can access his files anywhere on the go with high scalability and cost-effective
+                            manner.
+                             
+          14.Amazon RDS The database engines that are supported by Amazon RDS are Amazon Aurora, MySQL, MariaDB,Oracle, SQL Server, 
+              and PostgreSQL database engine.
+          
+          15. What is the work of Amazon RDS:When a user wants to set up a relational database then Amazon RDS is used.It provisions the
+                                              infrastructure capacity that a user requests to install the database software. 
+                                              Once the database is set up and functional RDS automates the tasks like patching up of the
+                                              software, taking the backup of the data and management of synchronous data replication with
+                                              automatic failover.
+
+         16.What is the purpose of standby RDS instance:The main purpose of launching a standby RDS instance is to prevent the
+                                                         infrastructure failure (in case failure occurs) so it is stored in a different
+                                                         availability zone which is a totally different infrastructure physically and
+                                                         independent.
+
+         17.Are RDS instances upgradable or downgradable according to the need?:Yes, you can upgrade the RDS instances with the help of 
+              following command:modify-db-instance. If you are unable to detect the amount of CPU needed to upgrade then start with  db.m1.small
+              DB instance class and monitor the utilization of CPU with the help of tool Amazon CloudWatch Service.
+ 
+          
